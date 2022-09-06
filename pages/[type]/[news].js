@@ -96,6 +96,12 @@ const News = (props) => {
               <button className={styles.readMoreBTN} onClick={() => backPage()}>
                 Back
               </button>
+              <button
+                className={styles.readMoreBTN}
+                onClick={() => sharePage()}
+              >
+                Share
+              </button>
               <Link href={props.articles[indexNumder].url}>
                 <a className={styles.readMoreBTN} target="_blank">
                   Go to :- {props.articles[indexNumder].source.name}
@@ -112,6 +118,21 @@ const News = (props) => {
 function backPage() {
   window.history.back();
 }
+const sharePage = () => {
+  const title = document.title;
+  const text = 'Check this out!';
+  const url = window.location.href;
+  if (navigator.share !== undefined) {
+    navigator
+      .share({
+        title,
+        text,
+        url,
+      })
+      .then(() => console.log('Shared!'))
+      .catch((err) => console.error(err));
+  }
+};
 export async function getServerSideProps() {
   const res = await fetch(
     'https://newsapi.org/v2/top-headlines?country=in&apiKey=8a9d02cfb4f94826b9fac8af4f084c19'
