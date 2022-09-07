@@ -15,8 +15,19 @@ const News = (props) => {
   return (
     <Layout>
       <Head>
-        <title>{props.articles[indexNumder].title}</title>
-        <meta name="description" content={props.articles[indexNumder].title} />
+        <title>
+          {props.articles[indexNumder].title
+            ? props.articles[indexNumder].title
+            : ''}
+        </title>
+        <meta
+          name="description"
+          content={
+            props.articles[indexNumder].title
+              ? props.articles[indexNumder].title
+              : ''
+          }
+        />
         <link
           rel="icon"
           type="image/png"
@@ -51,19 +62,38 @@ const News = (props) => {
               : '/icon-192x192.png'
           }
         />
-        <meta property="og:title" content={props.articles[indexNumder].title} />
+        <meta
+          property="og:title"
+          content={
+            props.articles[indexNumder].title
+              ? props.articles[indexNumder].title
+              : ''
+          }
+        />
         <meta
           property="og:description"
-          content={props.articles[indexNumder].title}
+          content={
+            props.articles[indexNumder].title
+              ? props.articles[indexNumder].title
+              : ''
+          }
         />
         <meta property="og:url" content={currentUrl} />
         <meta
           name="twitter:title"
-          content={props.articles[indexNumder].title}
+          content={
+            props.articles[indexNumder].title
+              ? props.articles[indexNumder].title
+              : ''
+          }
         />
         <meta
           name="twitter:description"
-          content={props.articles[indexNumder].title}
+          content={
+            props.articles[indexNumder].title
+              ? props.articles[indexNumder].title
+              : ''
+          }
         />
         <meta name="twitter:url" content={currentUrl} />
       </Head>
@@ -76,7 +106,11 @@ const News = (props) => {
                   ? props.articles[indexNumder].urlToImage
                   : '/icon-192x192.png'
               }
-              alt={props.articles[indexNumder].title}
+              alt={
+                props.articles[indexNumder].title
+                  ? props.articles[indexNumder].title
+                  : ''
+              }
             />
           </div>
           <div className={styles.newscontent}>
@@ -84,7 +118,9 @@ const News = (props) => {
               Publish Date: {props.articles[indexNumder].publishedAt}
             </div>
             <div className={styles.newsTitle}>
-              {props.articles[indexNumder].title}
+              {props.articles[indexNumder].title
+                ? props.articles[indexNumder].title
+                : ''}
             </div>
             <div className={styles.publishDate}>
               Source: {props.articles[indexNumder].author}
