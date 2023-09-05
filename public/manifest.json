@@ -2,8 +2,8 @@
     "theme_color": "#07007a",
     "background_color": "#07007a",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
+    "scope": "https://websitefreelancing.co.in",
+    "start_url": "https://websitefreelancing.co.in",
     "name": "Hindi News",
     "short_name": "News",
     "icons": [
